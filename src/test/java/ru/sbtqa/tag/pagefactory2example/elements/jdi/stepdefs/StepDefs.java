@@ -8,6 +8,6 @@ public class StepDefs {
     
     @Before
     public void initJDI() {
-        JDIUtils.setJDIConfig(() -> PageFactory.getDriver());
+        JDIUtils.setJDIConfig(PageFactory::getDriver);
     }
 }
