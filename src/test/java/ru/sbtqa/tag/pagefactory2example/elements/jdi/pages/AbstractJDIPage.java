@@ -4,8 +4,8 @@ import com.epam.jdi.uitests.web.selenium.elements.common.Button;
 import com.epam.jdi.uitests.web.selenium.elements.common.Input;
 import ru.sbtqa.tag.pagefactory.JDIPage;
 import ru.sbtqa.tag.pagefactory.JDIUtils;
-import ru.sbtqa.tag.pagefactory.PageContext;
 import ru.sbtqa.tag.pagefactory.annotations.ActionTitle;
+import ru.sbtqa.tag.pagefactory.context.PageContext;
 import ru.sbtqa.tag.pagefactory.exceptions.PageException;
 
 public class AbstractJDIPage extends JDIPage {
