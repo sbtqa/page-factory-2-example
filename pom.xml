@@ -75,11 +75,11 @@
               <!-- CucumberOptions.monochrome property -->
               <monochrome>true</monochrome>
               <!-- The tags to run, maps to CucumberOptions.tags property -->
-              <tags>
-                <tag>
-                  ~@html-elements
-                </tag>
-              </tags>
+              <!--<tags>-->
+                <!--<tag>-->
+                  <!--~@html-elements-->
+                <!--</tag>-->
+              <!--</tags>-->
               <!-- If set to true, only feature files containing the required tags shall be generated. -->
               <!-- Excluded tags (~@notMe) are ignored. -->
               <!--<filterFeaturesByTags>false</filterFeaturesByTags>-->
@@ -91,6 +91,7 @@
               <namingPattern>Parallel{c}IT</namingPattern>
               <!--<useJUnitReRun>true</useJUnitReRun>-->
               <!--<retryCount>2</retryCount>-->
+              <parallelScheme>SCENARIO</parallelScheme>
             </configuration>
           </execution>
         </executions>

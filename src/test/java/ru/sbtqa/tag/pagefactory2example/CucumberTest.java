@@ -1,8 +1,8 @@
 package ru.sbtqa.tag.pagefactory2example;
 
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
-import ru.sbtqa.tag.cucumber.TagCucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true, format = {"pretty"},
