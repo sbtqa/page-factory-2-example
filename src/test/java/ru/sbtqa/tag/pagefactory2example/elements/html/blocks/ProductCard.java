@@ -14,19 +14,19 @@ public class ProductCard extends TypifiedElement {
         super(wrappedElement);
     }
 
-    public String getProductName(){
+    public String getProductName() {
         String name = getWrappedElement()
                 .findElement(By.xpath(nameXpath))
                 .getText();
         return name;
     }
 
-    public Integer getMinCost(){
+    public Integer getMinCost() {
         String costString = getWrappedElement()
                 .findElement(By.xpath(costXpath))
                 .getText()
                 .replace(' ', Character.MIN_VALUE)
-                .replace("руб.","")
+                .replace("руб.", "")
                 .substring(2);
 
         return Integer.parseInt(costString);

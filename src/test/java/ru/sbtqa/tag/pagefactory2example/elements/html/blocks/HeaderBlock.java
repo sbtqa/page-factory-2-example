@@ -20,7 +20,7 @@ public class HeaderBlock extends HtmlElement {
     public TextInput searchButton;
 
     @ActionTitle("выполняет поиск")
-    public void startSearch(String text){
+    public void startSearch(String text) {
         searchString.sendKeys(text);
         searchString.sendKeys(Keys.ENTER);
     }

@@ -1,16 +1,13 @@
 package ru.sbtqa.tag.pagefactory2example;
 
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
-import ru.sbtqa.tag.cucumber.TagCucumber;
 
-@RunWith(TagCucumber.class)
+@RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true, format = {"pretty"},
-        glue = {"ru.sbtqa.tag.pagefactory.stepdefs", 
-            "ru.sbtqa.tag.pagefactory.htmlstepdefs",
-            "ru.sbtqa.tag.pagefactory2example.stepdefs",
-            "ru.sbtqa.tag.pagefactory2example.elements.jdi.stepdefs"},
+        glue = {"ru.sbtqa.tag.pagefactory"},
         features = {"src/test/resources/features/"}
 )
-
-public class CucumberTest {}
+public class CucumberTest {
+}
