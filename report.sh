@@ -1,4 +1,4 @@
-cd target
-../lib/allure-2.0.1/bin/allure generate --clean allure-results
-../lib/allure-2.0.1/bin/allure open
+#!/bin/bash
+
+./lib/allure-2.0.1/bin/allure serve
 
