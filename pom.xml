@@ -10,7 +10,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <pf2.version>3.0-SNAPSHOT</pf2.version>
+    <pf2.version>3.0.0</pf2.version>
     <aspectj.version>1.8.10</aspectj.version>
   </properties>
   <dependencies>
