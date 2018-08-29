@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(monochrome = true, plugin = {"pretty"},
         glue = {"ru.sbtqa.tag.stepdefs"},
         features = {"src/test/resources/features/"}
+        ,tags = {"@rest-plugin"}
 )
 
 public class CucumberTest {}
