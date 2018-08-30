@@ -9,7 +9,6 @@ import ru.sbtqa.tag.api.annotation.Validation;
 import static org.hamcrest.Matchers.equalTo;
 import static ru.sbtqa.tag.api.utils.CastUtils.toMap;
 
-// TODO схлопнуть все get после query applicator
 @Endpoint(method = Rest.GET, path = "repos/sbtqa/page-factory-2-example", title = "найти этот проект на гитхаб")
 public class FillFromFeatureFirstEntry extends EndpointEntry {
 
