@@ -10,7 +10,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <pf2.version>3.2.0</pf2.version>
+    <pf2.version>5.0-SNAPSHOT</pf2.version>
     <aspectj.version>1.8.10</aspectj.version>
   </properties>
   <dependencies>
@@ -28,6 +28,12 @@
     <dependency>
       <groupId>ru.sbtqa.tag.pagefactory</groupId>
       <artifactId>jdi-elements-plugin</artifactId>
+      <version>${pf2.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>ru.sbtqa.tag.pagefactory</groupId>
+      <artifactId>rest-plugin</artifactId>
       <version>${pf2.version}</version>
       <type>jar</type>
     </dependency>
