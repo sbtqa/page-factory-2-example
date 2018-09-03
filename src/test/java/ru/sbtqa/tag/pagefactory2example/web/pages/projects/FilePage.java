@@ -1,4 +1,4 @@
-package ru.sbtqa.tag.pagefactory2example.elements.web.pages;
+package ru.sbtqa.tag.pagefactory2example.web.pages.projects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,14 +7,14 @@ import ru.sbtqa.tag.pagefactory.WebPage;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 
-@PageEntry(title = "docs")
-public class DocsPage extends WebPage {
+@PageEntry(title = "Example")
+public class FilePage extends WebPage {
 
-    @ElementTitle("Wiki")
-    @FindBy(xpath = "//a[@href='/sbtqa/docs/wiki']")
-    public WebElement wiki;
+    @ElementTitle("Текст")
+    @FindBy(id = "LC1")
+    public WebElement textArea;
 
-    public DocsPage(WebDriver driver) {
+    public FilePage(WebDriver driver) {
         super(driver);
     }
 }
