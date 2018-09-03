@@ -1,4 +1,4 @@
-package ru.sbtqa.tag.pagefactory2example.elements.web.pages.projects;
+package ru.sbtqa.tag.pagefactory2example.web.pages.projects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +13,7 @@ import ru.sbtqa.tag.pagefactory.environment.Environment;
 import static java.lang.String.format;
 
 @PageEntry(title = "Wiki")
+// TODO перенести в свой package
 public class WikiPage extends WebPage {
 
     private static final String XPATH_TEMPLATE = "//div[@class='gollum-markdown-content']//a[text()='%s']";

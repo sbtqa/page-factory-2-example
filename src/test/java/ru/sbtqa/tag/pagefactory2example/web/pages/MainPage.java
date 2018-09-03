@@ -1,4 +1,4 @@
-package ru.sbtqa.tag.pagefactory2example.elements.web.pages;
+package ru.sbtqa.tag.pagefactory2example.web.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
