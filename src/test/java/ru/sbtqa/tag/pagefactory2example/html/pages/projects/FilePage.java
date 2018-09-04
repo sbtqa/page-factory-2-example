@@ -7,10 +7,10 @@ import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.yandex.qatools.htmlelements.element.TextBlock;
 
-@PageEntry(title = "Example H")
+@PageEntry(title = "Example HTML")
 public class FilePage extends HTMLPage {
 
-    @ElementTitle("Текст")
+    @ElementTitle("Text")
     @FindBy(id = "LC1")
     public TextBlock textArea;
 

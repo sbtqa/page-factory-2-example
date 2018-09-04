@@ -14,7 +14,7 @@ public class BranchMenuBlock extends HtmlElement {
     @FindBy(xpath = ".//span[normalize-space(text())='for-example']")
     public Button branch;
 
-    @ActionTitle("выбирает тестовую ветку")
+    @ActionTitle("select testing branch")
     public void selectTestBranch() {
         openBranchMenu.click();
         branch.click();

@@ -8,7 +8,7 @@ import ru.sbtqa.tag.pagefactory.annotations.ActionTitle;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 
-@PageEntry(title = "Page-factory-2 example J")
+@PageEntry(title = "Page-factory-2 example JDI")
 public class Pf2ExamplePage extends JDIPage {
 
     @ElementTitle("Select branch")
@@ -27,7 +27,7 @@ public class Pf2ExamplePage extends JDIPage {
         super(driver);
     }
 
-    @ActionTitle("выбирает ветку")
+    @ActionTitle("select branch")
     public void selectBranch() {
         selectMenuButton.click();
         branch.click();

@@ -18,7 +18,7 @@ public class SearchRepositoriesBlock extends HtmlElement {
     @FindBy(xpath = ".//div[contains(@class, 'ml-1')]/button")
     public Button language;
 
-    @ActionTitle("ищет репозиторий")
+    @ActionTitle("search repo")
     public void selectTestBranch(String name) {
         searchInput.sendKeys(name);
     }

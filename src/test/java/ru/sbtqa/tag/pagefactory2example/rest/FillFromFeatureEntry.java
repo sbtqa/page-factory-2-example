@@ -7,7 +7,7 @@ import ru.sbtqa.tag.api.annotation.Validation;
 
 import static org.hamcrest.Matchers.equalTo;
 
-@Endpoint(method = Rest.GET, path = "search/repositories", title = "поиск репозиториев")
+@Endpoint(method = Rest.GET, path = "search/repositories", title = "search repo")
 public class FillFromFeatureEntry extends EndpointEntry {
 
     @Validation(title = "validate")

@@ -9,10 +9,10 @@ import ru.sbtqa.tag.pagefactory.annotations.ActionTitle;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 
-@PageEntry(title = "Example J")
+@PageEntry(title = "Example JDI")
 public class FilePage extends JDIPage {
 
-    @ElementTitle("Текст")
+    @ElementTitle("Text")
     @FindBy(id = "LC1")
     public Text textArea;
 
@@ -20,7 +20,7 @@ public class FilePage extends JDIPage {
         super(driver);
     }
 
-    @ActionTitle("проверяет текст на соответствие")
+    @ActionTitle("check text on equality to")
     public void selectBranch(String text) {
         Assert.assertEquals("Текст не соответствует ожидаемому", text, textArea.getText());
     }

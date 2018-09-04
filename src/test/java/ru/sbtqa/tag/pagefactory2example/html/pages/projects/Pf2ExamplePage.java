@@ -8,10 +8,10 @@ import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory2example.html.blocks.BranchMenuBlock;
 import ru.yandex.qatools.htmlelements.element.Link;
 
-@PageEntry(title = "Page-factory-2 example H")
+@PageEntry(title = "Page-factory-2 example HTML")
 public class Pf2ExamplePage extends HTMLPage {
 
-    @ElementTitle("Список веток")
+    @ElementTitle("List of branches")
     public BranchMenuBlock branchMenuBlock;
 
     @ElementTitle("example.txt")
