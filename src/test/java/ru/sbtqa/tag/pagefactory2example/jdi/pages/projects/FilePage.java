@@ -20,6 +20,7 @@ public class FilePage extends JDIPage {
         super(driver);
     }
 
+    @ActionTitle("проверяет текст на равенство")
     @ActionTitle("check text on equality to")
     public void selectBranch(String text) {
         Assert.assertEquals("Текст не соответствует ожидаемому", text, textArea.getText());

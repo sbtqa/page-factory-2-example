@@ -25,6 +25,7 @@ public class WikiPage extends WebPage {
         super(driver);
     }
 
+    @ActionTitle("нажимает на ссылку раздела")
     @ActionTitle("click on section link")
     public void openSection(String name) {
         String xpath = format(XPATH_TEMPLATE, name);

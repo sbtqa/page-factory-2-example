@@ -27,6 +27,7 @@ public class Pf2ExamplePage extends JDIPage {
         super(driver);
     }
 
+    @ActionTitle("выбирает ветку")
     @ActionTitle("select branch")
     public void selectBranch() {
         selectMenuButton.click();
