@@ -38,9 +38,8 @@ public class MainPage extends WebPage {
     }
 
     @ActionTitle("open this example project")
+    @ActionTitle("открывает этот проект")
     public void selectBranch() {
-        PageActions actions = WebEnvironment.getPageActions();
-
         api.send(GetExampleRepoNameEntry.class);
         String name = ApiEnvironment.getRepository().getLast().getResponse().extract().body().path("name");
         actions.fill(reposFilter, name);

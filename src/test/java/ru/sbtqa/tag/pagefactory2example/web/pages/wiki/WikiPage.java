@@ -17,7 +17,7 @@ public class WikiPage extends WebPage {
 
     private static final String XPATH_TEMPLATE = "//div[@class='gollum-markdown-content']//a[text()='%s']";
 
-    @ElementTitle("Заголовок")
+    @ElementTitle("Header")
     @FindBy(xpath = "//h1[contains(@class, 'gh-header-title')]")
     public WebElement header;
 
@@ -25,7 +25,7 @@ public class WikiPage extends WebPage {
         super(driver);
     }
 
-    @ActionTitle("кликает по ссылке раздела")
+    @ActionTitle("click on section link")
     public void openSection(String name) {
         String xpath = format(XPATH_TEMPLATE, name);
         WebElement section = getDriver().findElement(By.xpath(xpath));
