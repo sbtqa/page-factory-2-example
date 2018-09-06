@@ -6,8 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(monochrome = true, plugin = {"pretty"},
-        glue = {"ru.sbtqa.tag.stepdefs"},
-        features = {"src/test/resources/features/"}
+        glue = {"ru.sbtqa.tag.stepdefs",
+                "ru.sbtqa.tag.pagefactory2example.stepdefs"},
+        features = {"src/test/resources/ru/features/"}
 )
 
 public class CucumberTest {}
