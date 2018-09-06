@@ -8,7 +8,7 @@ import ru.sbtqa.tag.pagefactory.JDIPage;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 
-@PageEntry(title = "Test Automation Gears J")
+@PageEntry(title = "Test Automation Gears JDI")
 public class MainPage extends JDIPage {
 
     @ElementTitle("Search repositories...")

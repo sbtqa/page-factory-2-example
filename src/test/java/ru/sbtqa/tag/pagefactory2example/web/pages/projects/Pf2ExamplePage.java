@@ -29,6 +29,7 @@ public class Pf2ExamplePage extends WebPage {
     }
 
     @ActionTitle("выбирает ветку")
+    @ActionTitle("select branch")
     public void selectBranch(String name) throws PageException {
         click("Select branch");
         click(name);

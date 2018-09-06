@@ -9,10 +9,10 @@ import ru.sbtqa.tag.api.annotation.Validation;
 import static org.hamcrest.Matchers.equalTo;
 import static ru.sbtqa.tag.api.utils.CastUtils.toMap;
 
-@Endpoint(method = Rest.GET, path = "repos/sbtqa/page-factory-2-example", title = "найти этот проект на гитхаб")
+@Endpoint(method = Rest.GET, path = "repos/sbtqa/page-factory-2-example", title = "search this repo on github")
 public class FillFromFeatureFirstEntry extends EndpointEntry {
 
-    @Validation(title = "описание")
+    @Validation(title = "description")
     public void validate(DataTable dataTable) {
         String description = toMap(dataTable).get("description");
 

@@ -10,7 +10,7 @@ import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 @PageEntry(title = "Example")
 public class FilePage extends WebPage {
 
-    @ElementTitle("Текст")
+    @ElementTitle("Text")
     @FindBy(id = "LC1")
     public WebElement textArea;
 

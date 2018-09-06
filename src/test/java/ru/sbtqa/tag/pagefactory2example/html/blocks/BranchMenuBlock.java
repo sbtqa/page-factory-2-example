@@ -15,6 +15,7 @@ public class BranchMenuBlock extends HtmlElement {
     public Button branch;
 
     @ActionTitle("выбирает тестовую ветку")
+    @ActionTitle("select testing branch")
     public void selectTestBranch() {
         openBranchMenu.click();
         branch.click();

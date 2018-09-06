@@ -19,6 +19,7 @@ public class SearchRepositoriesBlock extends HtmlElement {
     public Button language;
 
     @ActionTitle("ищет репозиторий")
+    @ActionTitle("search repo")
     public void selectTestBranch(String name) {
         searchInput.sendKeys(name);
     }

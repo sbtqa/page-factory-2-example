@@ -8,10 +8,10 @@ import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory2example.html.blocks.SearchRepositoriesBlock;
 import ru.yandex.qatools.htmlelements.element.Link;
 
-@PageEntry(title = "Test Automation Gears H")
+@PageEntry(title = "Test Automation Gears HTML")
 public class MainPage extends HTMLPage {
 
-    @ElementTitle("Список репозиториев")
+    @ElementTitle("List of repos")
     public SearchRepositoriesBlock searchRepositoriesBlock;
 
     @ElementTitle("page-factory-2-example")
