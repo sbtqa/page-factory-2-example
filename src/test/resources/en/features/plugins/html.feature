@@ -1,8 +1,8 @@
 #language:en
-@html-plugin @en
+@html-plugin
 Feature: Example of using html-plugin
 
-  @html @en
+  @html
   Scenario: Example of using html-plugin
     * user is on the page "Test Automation Gears HTML"
     * user in block "List of repos" (search repo) with a parameter "page-factory-2-example"

@@ -1,8 +1,8 @@
 #language:en
-@web-plugin @en
+@web-plugin
 Feature: Example of using web-plugin
 
-  @web @en
+  @web
   Scenario: Example of using web-plugin
     * user is on the page "Test Automation Gears"
     * user (fill the field) "Search repositories..." "page-factory-2-example"
@@ -12,4 +12,3 @@ Feature: Example of using web-plugin
     * user (click the link) "example.txt"
     * user is on the page "Example"
     * user (checks value) "Text" "Тестовый текст для примера"
-

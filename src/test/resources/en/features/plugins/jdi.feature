@@ -1,8 +1,8 @@
 #language:en
-@jdi-plugin @en
+@jdi-plugin
 Feature: Example of using jdi-plugin
 
-  @jdi @en
+  @jdi
   Scenario: Example of using jdi-plugin
     * user is on the page "Test Automation Gears JDI"
     * user (fill the field) "Search repositories..." "page-factory-2-example"

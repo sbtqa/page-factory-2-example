@@ -3,7 +3,7 @@ Feature: Example of using multiple plug-ins at the same time
 
   In this example, four plug-ins were used for one time: rest, web, html and jdi
 
-  @cross @en
+  @cross
   Scenario: Example of using multiple plug-ins at the same time in the same scenario
 
     # This page uses the web-plugin

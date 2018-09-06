@@ -1,8 +1,8 @@
 #language:en
-@fragments-en
+@fragments
 Feature: Example of using fragments
 
-  @fragment-datatable-en
+  @fragment-datatable
   Scenario: Example of using fragments with params
     * user is on the page "Test Automation Gears"
     * user inserts fragment "Open doc section"
@@ -10,7 +10,7 @@ Feature: Example of using fragments
       | Fragments |
     * user (checks value) "Header" "Fragments"
 
-  @fragment-outline-en
+  @fragment-outline
   Scenario Outline: Example of using fragments with params in scenario outlines
     * user is on the page "Test Automation Gears"
     * user inserts fragment "Open doc section"
@@ -23,7 +23,7 @@ Feature: Example of using fragments
       | Fragments |
       | Pages     |
 
-  @fragment-without-params-en
+  @fragment-without-params
   Scenario: Example of using fragments without params
     * user is on the page "Test Automation Gears"
     * user inserts fragment "First level fragment"

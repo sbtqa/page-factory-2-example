@@ -8,5 +8,3 @@ Feature: Open doc section
     * user (click the link) "Wiki"
     * user is on the page "Wiki"
     * user (click on section link) "<section>"
-
-
