@@ -1,6 +1,5 @@
 package ru.sbtqa.tag.pagefactory2example.html.pages.projects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.HTMLPage;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
@@ -17,8 +16,4 @@ public class Pf2ExamplePage extends HTMLPage {
     @ElementTitle("example.txt")
     @FindBy(xpath = "//a[text()='example.txt']")
     public Link example;
-
-    public Pf2ExamplePage(WebDriver driver) {
-        super(driver);
-    }
 }

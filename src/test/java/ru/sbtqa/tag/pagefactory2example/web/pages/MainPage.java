@@ -1,6 +1,5 @@
 package ru.sbtqa.tag.pagefactory2example.web.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.api.environment.ApiEnvironment;
@@ -31,8 +30,7 @@ public class MainPage extends WebPage {
     @FindBy(xpath = "//a[@href='/sbtqa/docs']")
     public WebElement docsLink;
 
-    public MainPage(WebDriver driver) {
-        super(driver);
+    public MainPage() {
         api = ApiSteps.getInstance();
         actions = WebEnvironment.getPageActions();
     }

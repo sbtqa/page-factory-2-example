@@ -1,7 +1,6 @@
 package ru.sbtqa.tag.pagefactory2example.jdi.pages.projects;
 
 import com.epam.jdi.uitests.web.selenium.elements.common.Button;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.JDIPage;
 import ru.sbtqa.tag.pagefactory.annotations.ActionTitle;
@@ -22,10 +21,6 @@ public class Pf2ExamplePage extends JDIPage {
     @ElementTitle("example.txt")
     @FindBy(xpath = "//a[text()='example.txt']")
     public Button example;
-
-    public Pf2ExamplePage(WebDriver driver) {
-        super(driver);
-    }
 
     @ActionTitle("выбирает ветку")
     @ActionTitle("select branch")

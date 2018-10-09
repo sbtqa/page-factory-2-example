@@ -1,7 +1,6 @@
 package ru.sbtqa.tag.pagefactory2example.web.pages.wiki;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.WebPage;
@@ -21,15 +20,11 @@ public class WikiPage extends WebPage {
     @FindBy(xpath = "//h1[contains(@class, 'gh-header-title')]")
     public WebElement header;
 
-    public WikiPage(WebDriver driver) {
-        super(driver);
-    }
-
     @ActionTitle("нажимает на ссылку раздела")
     @ActionTitle("click on section link")
     public void openSection(String name) {
         String xpath = format(XPATH_TEMPLATE, name);
-        WebElement section = getDriver().findElement(By.xpath(xpath));
+        WebElement section = Environment.getDriverService().getDriver().findElement(By.xpath(xpath));
         Environment.getPageActions().click(section);
     }
 }

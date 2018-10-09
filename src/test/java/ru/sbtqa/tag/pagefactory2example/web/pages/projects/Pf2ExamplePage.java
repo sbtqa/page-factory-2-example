@@ -1,6 +1,5 @@
 package ru.sbtqa.tag.pagefactory2example.web.pages.projects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.WebPage;
@@ -23,10 +22,6 @@ public class Pf2ExamplePage extends WebPage {
     @ElementTitle("example.txt")
     @FindBy(xpath = "//a[text()='example.txt']")
     public WebElement example;
-
-    public Pf2ExamplePage(WebDriver driver) {
-        super(driver);
-    }
 
     @ActionTitle("выбирает ветку")
     @ActionTitle("select branch")

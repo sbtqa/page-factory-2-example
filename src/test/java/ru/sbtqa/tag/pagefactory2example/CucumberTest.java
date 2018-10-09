@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
         glue = {"ru.sbtqa.tag.stepdefs",
                 "ru.sbtqa.tag.pagefactory2example.stepdefs"},
         features = {"src/test/resources/ru/features/"}
+//        ,tags = {"@cross"}
 )
 
 public class CucumberTest {}

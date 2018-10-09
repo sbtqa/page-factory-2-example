@@ -1,6 +1,5 @@
 package ru.sbtqa.tag.pagefactory2example.html.pages.projects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.HTMLPage;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
@@ -13,8 +12,4 @@ public class FilePage extends HTMLPage {
     @ElementTitle("Text")
     @FindBy(id = "LC1")
     public TextBlock textArea;
-
-    public FilePage(WebDriver driver) {
-        super(driver);
-    }
 }
