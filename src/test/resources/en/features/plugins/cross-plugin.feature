@@ -16,7 +16,7 @@ Feature: Example of using multiple plug-ins at the same time
     # This page uses the html-plugin
     * user is on the page "Page-factory-2 example HTML"
     * user in block "List of branches" (select testing branch)
-    * user (click the button) "example.txt"
+    * user clicks the button "example.txt"
 
     # This page uses jdi-plugin
     * user is on the page "Example JDI"

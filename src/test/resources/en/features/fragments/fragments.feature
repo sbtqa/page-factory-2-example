@@ -8,7 +8,7 @@ Feature: Example of using fragments
     * user inserts fragment "Open doc section"
       | section   |
       | Fragments |
-    * user (checks value) "Header" "Fragments"
+    * user checks in the element "Header" value "Fragments"
 
   @fragment-outline
   Scenario Outline: Example of using fragments with params in scenario outlines
@@ -16,7 +16,7 @@ Feature: Example of using fragments
     * user inserts fragment "Open doc section"
       | section   |
       | <section> |
-    * user (checks value) "Header" "<section>"
+    * user checks in the element "Header" value "<section>"
 
     Examples:
       | section   |
@@ -27,4 +27,4 @@ Feature: Example of using fragments
   Scenario: Example of using fragments without params
     * user is on the page "Test Automation Gears"
     * user inserts fragment "First level fragment"
-    * user (checks value) "Search repositories..." "Second level fragment text"
+    * user checks in the element "Search repositories..." value "Second level fragment text"
