@@ -1,6 +1,5 @@
 package ru.sbtqa.tag.pagefactory2example.html.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.HTMLPage;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
@@ -17,8 +16,4 @@ public class MainPage extends HTMLPage {
     @ElementTitle("page-factory-2-example")
     @FindBy(xpath = "//a[@href='/sbtqa/page-factory-2-example']")
     public Link pageFactory2ExampleLink;
-
-    public MainPage(WebDriver driver) {
-        super(driver);
-    }
 }
