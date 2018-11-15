@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./lib/allure-2.0.1/bin/allure serve
+./lib/allure-2.7.0/bin/allure serve
 
