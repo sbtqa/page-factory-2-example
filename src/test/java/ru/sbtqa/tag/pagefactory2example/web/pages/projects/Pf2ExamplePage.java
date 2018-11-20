@@ -8,7 +8,7 @@ import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.environment.Environment;
 import ru.sbtqa.tag.pagefactory.exceptions.PageException;
-import ru.sbtqa.tag.pagefactory.utils.ReflectionUtils;
+import ru.sbtqa.tag.pagefactory.reflection.DefaultReflection;
 
 @PageEntry(title = "Page-factory-2 example")
 public class Pf2ExamplePage extends WebPage {
@@ -29,7 +29,7 @@ public class Pf2ExamplePage extends WebPage {
     @ActionTitle("select branch")
     public void selectBranch(String name) throws PageException {
         Environment.getPageActions().click(selectMenuButton);
-        WebElement branch = ReflectionUtils.getElementByTitle(this, name);
+        WebElement branch = new DefaultReflection().getElementByTitle(this, name);
         Environment.getPageActions().click(branch);
     }
 }
