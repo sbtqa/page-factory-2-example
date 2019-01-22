@@ -16,8 +16,8 @@ public class FillFromFeatureEntry extends EndpointEntry {
 
         getResponse()
                 .body("items[0].name", equalTo("page-factory-2-example"))
-                .body("items[1].name", equalTo("page-factory-2"))
-                .body("items[2].name", equalTo("page-factory-example"))
+                .body("items[1].name", equalTo("page-factory-example"))
+                .body("items[2].name", equalTo("page-factory-2"))
                 .body("items[3].name", equalTo("page-factory"));
     }
 }
