@@ -1,18 +1,16 @@
 package ru.sbtqa.tag.pagefactory2example.mq;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.jms.core.JmsTemplate;
 import ru.sbtqa.tag.mqfactory.MqFactory;
 import ru.sbtqa.tag.mqfactory.exception.JmsException;
 import ru.sbtqa.tag.mqfactory.exception.MqException;
 import ru.sbtqa.tag.mqfactory.interfaces.Jms;
 
-import javax.jms.ConnectionFactory;
 import javax.jms.JMSException;
 import javax.jms.QueueConnection;
 import javax.jms.TextMessage;
@@ -24,82 +22,92 @@ public class ActiveMqTest {
     private static final Logger LOG = LoggerFactory.getLogger(ActiveMqTest.class);
     public static final String AMQ_BROKER_URL = "tcp://localhost:61616";
     public static final String QUEUE_NAME = "testQueue";
+    public static final int MESSAGE_COUNT = 3;
 
-    private ConnectionFactory mConnectionFactory;
-    private JmsTemplate mJmsTemplate;
-    private Jms<TextMessage> mq;
+    private QueueConnection mQueueConnection;
+    private Jms<TextMessage> mqService;
 
     @Before
-    public void setUp() {
-//        mConnectionFactory = new ActiveMQConnectionFactory(AMQ_BROKER_URL);
-//        mJmsTemplate = new JmsTemplate(mConnectionFactory);
-//        mJmsTemplate.setDefaultDestination(new ActiveMQQueue(QUEUE_NAME));
-//        mJmsTemplate.setReceiveTimeout(500L);
+    public void beforeTest() {
+        mQueueConnection = null;
+        mqService = createConnection();
+    }
 
-        mq = getJmsTextMessage();
-        Assert.assertNotNull(mq);
+    @After
+    public void afterTest() throws MqException, JMSException {
+        mqService.removeAllMessages(QUEUE_NAME);
+        if (mQueueConnection != null) {
+            mQueueConnection.close();
+        }
     }
 
     @Test
-    public void sendMessages() throws MqException {
-        List<String> messageIdList = new ArrayList<>();
-        int size = mq.browseAllMessages(QUEUE_NAME).size();
-        for (int i = 1; i <= 2; i++) {
-            final int ii = i;
-            messageIdList.add(mq.sendRequest(QUEUE_NAME, message -> {
-                try {
-                    message.setText("Test MQ " + ii);
-                    message.setJMSCorrelationID("ID:111D11111D11111E111D1E111C1111111B1F1E1A1111EF11");
-                } catch (JMSException e) {
-                    throw new JmsException("Can't set text to message");
-                }
-                return message;
-            }));
+    public void browseMessages() throws MqException {
+        LOG.info("");
+        LOG.info("----- Start sending messages -----");
+        for (int i = 1; i <= MESSAGE_COUNT; i++) {
+            sendMQ(i, "Correlation_" + i);
         }
-        List<TextMessage> listAfterAdd = mq.browseAllMessages(QUEUE_NAME);
-        Assert.assertEquals(size + messageIdList.size(), listAfterAdd.size());
-        Assert.assertNotNull(listAfterAdd);
-        for (TextMessage obj : listAfterAdd) {
-            LOG.info(obj.toString());
+        LOG.info("----- End sending messages -----");
+
+        LOG.info("");
+        LOG.info("----- Start browsing messages -----");
+        List<TextMessage> listAfterAdd = mqService.browseAllMessages(QUEUE_NAME);
+        for (TextMessage message : listAfterAdd) {
+            LOG.info(message.toString());
         }
-        // check, that first browse did not remove messages
-        Assert.assertEquals(listAfterAdd.size(), mq.browseAllMessages(QUEUE_NAME).size());
+        LOG.info("----- End browsing messages -----");
     }
 
-//    @Test
-//    public void someIntegrationTest() throws JMSException {
-//        LOG.info("Test starting...");
-//        sendMessages();
-//        receiveMessages();
-//        LOG.info("Test done!");
-//    }
+    @Test
+    public void getMessagesById() throws MqException {
+        LOG.info("");
+        LOG.info("----- Start sending messages -----");
+        List<String> messageIdList = new ArrayList<>();
+        for (int i = 1; i <= MESSAGE_COUNT; i++) {
+            messageIdList.add(sendMQ(i, "Correlation_" + i));
+        }
+        LOG.info("----- End sending messages -----");
 
-//    private void sendMessages() {
-//        for (int i = 1; i <= 10; i++) {
-//            final int idx = i;
-//            final String messageStr = "Message: " + idx;
-//            LOG.info("Sending message with text: {}", messageStr);
-//            mJmsTemplate.send(inJmsSession -> {
-//                TextMessage textMessage = inJmsSession.createTextMessage(messageStr);
-//                textMessage.setIntProperty("messageNumber", idx);
-//                return textMessage;
-//            });
-//        }
-//    }
+        LOG.info("");
+        LOG.info("----- Start searching messages by ID -----");
+        for (String messId : messageIdList) {
+            TextMessage message = mqService.getMessageById(QUEUE_NAME, messId);
+            LOG.info(message.toString());
+        }
+        LOG.info("----- End searching messages by ID -----");
+    }
 
-//    private void receiveMessages() throws JMSException {
-//        Message receivedMessage = mJmsTemplate.receive();
-//        while (receivedMessage != null) {
-//            if (receivedMessage instanceof TextMessage) {
-//                final TextMessage textMessage = (TextMessage) receivedMessage;
-//                LOG.info("Received a message with text: {}", textMessage.getText());
-//            }
-//            receivedMessage = mJmsTemplate.receive();
-//        }
-//        LOG.info("All messages received!");
-//    }
+    @Test
+    public void getMessageByParam() throws MqException {
+        sendMQ(100500, "Correlation_100500");
+        LOG.info("");
+        LOG.info("----- Start getting message by param -----");
+        List<TextMessage> messByCorrelList = mqService.getMessagesByParam(QUEUE_NAME, "JMSCorrelationID", "ID:Correlation_100500");
+        LOG.info("List of JMSMessageID:");
+        for (TextMessage message : messByCorrelList) {
+            try {
+                LOG.info("---> Message ID: {}; Message text: {}", message.getJMSMessageID(), message.getText());
+            } catch (JMSException e) {
+                LOG.error("", e);
+            }
+        }
+        LOG.info("----- End getting message by param -----");
+    }
 
-    private Jms<TextMessage> getJmsTextMessage() {
+    private String sendMQ(final int idx, final String correlationId) throws MqException {
+        return mqService.sendRequest(QUEUE_NAME, message -> {
+            try {
+                message.setText("Test MQ " + idx);
+                message.setJMSCorrelationID("ID:" + correlationId);
+            } catch (JMSException e) {
+                throw new JmsException("Can't set text to message");
+            }
+            return message;
+        });
+    }
+
+    private Jms<TextMessage> createConnection() {
         QueueConnection queueConnection = null;
         try {
             ActiveMQConnectionFactory mqCF = new ActiveMQConnectionFactory(AMQ_BROKER_URL);
@@ -108,10 +116,10 @@ public class ActiveMqTest {
             LOG.error("", ex);
         }
 
-        Assert.assertNotNull(queueConnection);
         Properties connProps = new Properties();
         connProps.put(MqFactory.MQ_TYPE, "activeMq");
         connProps.put(MqFactory.JMS_CONNECTION, queueConnection);
+        mQueueConnection = queueConnection;
         return MqFactory.getMq(connProps);
     }
 }
