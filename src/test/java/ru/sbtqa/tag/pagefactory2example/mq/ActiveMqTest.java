@@ -18,6 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+
+/**
+ * To start tests type in command line:
+ * mvn -Dtest=ActiveMqTest test
+ */
 public class ActiveMqTest {
     private static final Logger LOG = LoggerFactory.getLogger(ActiveMqTest.class);
     public static final String AMQ_BROKER_URL = "tcp://localhost:61616";
