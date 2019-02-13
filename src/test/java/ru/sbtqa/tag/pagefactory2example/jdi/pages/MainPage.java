@@ -15,6 +15,6 @@ public class MainPage extends JDIPage {
     public Input reposFilter;
 
     @ElementTitle("page-factory-2-example")
-    @FindBy(xpath = "//a[@href='/sbtqa/page-factory-2-example']")
+    @FindBy(xpath = "//div[@id='org-repositories']//a[@href='/sbtqa/page-factory-2-example']")
     public Button pageFactory2ExampleLink;
 }

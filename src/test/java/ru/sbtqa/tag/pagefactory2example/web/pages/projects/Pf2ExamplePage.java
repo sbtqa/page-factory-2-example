@@ -14,7 +14,7 @@ import ru.sbtqa.tag.pagefactory.reflection.DefaultReflection;
 public class Pf2ExamplePage extends WebPage {
 
     @ElementTitle("Select branch")
-    @FindBy(xpath = "//div[contains(@class, 'branch-select-menu')]/button")
+    @FindBy(xpath = "//details[contains(@class, 'branch-select-menu')]/summary")
     public WebElement selectMenuButton;
 
     @ElementTitle("for-example")
