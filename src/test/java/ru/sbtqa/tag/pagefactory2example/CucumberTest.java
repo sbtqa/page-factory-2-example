@@ -10,9 +10,5 @@ import ru.sbtqa.tag.pagefactory.Tag;
         glue = {"ru.sbtqa.tag.stepdefs",
                 "ru.sbtqa.tag.pagefactory2example.stepdefs"},
         features = {"src/test/resources/en/features/"}
-//        ,tags = {"@rest-plugin"}
 )
-
-public class CucumberTest extends Tag {
-
-}
+public class CucumberTest extends Tag {}
