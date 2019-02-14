@@ -2,3 +2,7 @@ allure-results/
 target/
 .idea/
 *.iml
+.vscode/
+.settings/
+.classpath
+.project
