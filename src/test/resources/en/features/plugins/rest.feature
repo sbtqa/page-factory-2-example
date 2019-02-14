@@ -28,6 +28,6 @@ Feature: Testing api-services with rest-plugin
   Scenario: Filling a request from the feature, when you need to take values from previous requests, sending, checking the answer
     * user sends request for "search this repo on github"
     * user fill the request "search this repo on github через поиск"
-    * user add query parameter "q" from response on "search this repo on github" Body "full_name" mask "(.*)-example"
+    * user add query parameter "q" from response on "search this repo on github" body "full_name" mask "(.*)-example"
     * user sends request
     * user validates response
