@@ -10,7 +10,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <pf2.version>9.0.1</pf2.version>
+    <pf2.version>11.0.0</pf2.version>
     <aspectj.version>1.8.10</aspectj.version>
   </properties>
   <dependencies>
@@ -37,6 +37,17 @@
       <version>${pf2.version}</version>
       <type>jar</type>
     </dependency>
+    <dependency>
+      <groupId>ru.sbtqa.tag.pagefactory</groupId>
+      <artifactId>mobile-plugin</artifactId>
+      <version>${pf2.version}</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-junit4</artifactId>
+      <version>2.10.0</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -49,6 +60,12 @@
             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
             -Dcucumber.options="--plugin io.qameta.allure.cucumber2jvm.AllureCucumber2Jvm --plugin pretty"
           </argLine>
+          <properties>
+            <property>
+              <name>listener</name>
+              <value>io.qameta.allure.junit4.AllureJunit4</value>
+            </property>
+          </properties>
         </configuration>
         <dependencies>
           <dependency>
