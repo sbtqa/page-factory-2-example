@@ -8,7 +8,7 @@ import ru.yandex.qatools.htmlelements.element.HtmlElement;
 @FindBy(xpath = "//details[contains(@class, 'branch-select-menu')]")
 public class BranchMenuBlock extends HtmlElement {
 
-    @FindBy(xpath = "//*[contains(@class, 'select-menu-button')]")
+    @FindBy(xpath = "./summary")
     public Button openBranchMenu;
 
     @FindBy(xpath = ".//span[normalize-space(text())='for-example']")

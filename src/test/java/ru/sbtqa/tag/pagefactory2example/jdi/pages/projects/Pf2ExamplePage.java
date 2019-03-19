@@ -11,7 +11,7 @@ import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 public class Pf2ExamplePage extends JDIPage {
 
     @ElementTitle("Select branch")
-    @FindBy(xpath = "//details[contains(@class, 'branch-select-menu')]")
+    @FindBy(xpath = "//details[contains(@class, 'branch-select-menu')]/summary")
     public Button selectMenuButton;
 
     @ElementTitle("for-example")
