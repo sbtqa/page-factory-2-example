@@ -11,7 +11,4 @@ import ru.sbtqa.tag.pagefactory.Tag;
                 "ru.sbtqa.tag.pagefactory2example.stepdefs"},
         features = {"src/test/resources/ru/features/"}
 )
-
-public class CucumberTest extends Tag {
-
-}
+public class CucumberTest extends Tag {}

@@ -12,4 +12,3 @@ Feature: Example of using jdi-plugin
     * user clicks the button "example.txt"
     * user is on the page "Example JDI"
     * user (check text on equality to) "Тестовый текст для примера"
-
