@@ -4,8 +4,10 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import ru.sbtqa.tag.pagefactory.exceptions.PageException;
-import ru.sbtqa.tag.stepdefs.CoreSetupSteps;
-import ru.sbtqa.tag.stepdefs.WebSteps;
+import ru.sbtqa.tag.pagefactory.exceptions.PageInitializationException;
+import ru.sbtqa.tag.pagefactory.junit.CoreSetupSteps;
+import ru.sbtqa.tag.pagefactory.web.junit.WebSteps;
+import ru.sbtqa.tag.pagefactory2example.junit.ExampleSteps;
 
 public class JunitTest {
 
@@ -26,6 +28,11 @@ public class JunitTest {
                 .click("example.txt")
                 .openPage("Example")
                 .checkValueIsEqual("Text", "Тестовый текст для примера");
+    }
+
+    @Test
+    public void testOwnMethod() throws PageInitializationException {
+        ExampleSteps.getInstance().openPage("Test Automation Gears").exampleMethod("parameterName");
     }
 
     @AfterClass
