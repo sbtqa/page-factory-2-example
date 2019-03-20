@@ -14,6 +14,19 @@ Feature: Testing api-services with rest-plugin
     * system returns "description" with parameters
       | description | New version of the page-factory framework |
 
+  @restbug
+  Scenario Outline: Rest bugs
+    * user sends request for "get description of repo with params" with parameters
+      | repo | <repo> |
+    * system returns "description" with parameters
+      | description | <description> |
+
+    Examples:
+    | repo              | description                                     |
+    | page-factory-2    | New version of the page-factory framework       |
+    | datajack          | Java framework to work with your test data      |
+
+
   @rest-fill-from-feature
   Scenario: Filling the request from the feature and sending, checking the answer
     * user fill the request "search repo"
