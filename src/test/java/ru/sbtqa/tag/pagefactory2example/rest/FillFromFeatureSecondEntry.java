@@ -1,8 +1,8 @@
 package ru.sbtqa.tag.pagefactory2example.rest;
 
 import ru.sbtqa.tag.api.EndpointEntry;
-import ru.sbtqa.tag.api.Rest;
-import ru.sbtqa.tag.api.annotation.Endpoint;
+import ru.sbtqa.tag.pagefactory.Rest;
+import ru.sbtqa.tag.pagefactory.annotations.rest.Endpoint;
 import ru.sbtqa.tag.api.annotation.Validation;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -12,6 +12,6 @@ public class FillFromFeatureSecondEntry extends EndpointEntry {
 
     @Validation(title = "total projects count")
     public void validate() {
-        getResponse().body("total_count", equalTo(2));
+        getResponse().body("total_count", equalTo(3));
     }
 }

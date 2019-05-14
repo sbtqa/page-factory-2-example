@@ -7,9 +7,9 @@ import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 
 @PageEntry(title = "docs")
-public class DocsPage extends WebPage {
+public class SitePage extends WebPage {
 
     @ElementTitle("Wiki")
-    @FindBy(xpath = "//a[@href='/sbtqa/docs/wiki']")
+    @FindBy(xpath = "//a[@href='/sbtqa/page-factory-2-site/wiki']")
     public WebElement wiki;
 }
