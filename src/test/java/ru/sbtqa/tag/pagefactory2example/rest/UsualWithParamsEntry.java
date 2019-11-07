@@ -1,6 +1,6 @@
 package ru.sbtqa.tag.pagefactory2example.rest;
 
-import cucumber.api.DataTable;
+import io.cucumber.datatable.DataTable;
 import ru.sbtqa.tag.api.EndpointEntry;
 import ru.sbtqa.tag.pagefactory.Rest;
 import ru.sbtqa.tag.pagefactory.annotations.rest.Endpoint;
