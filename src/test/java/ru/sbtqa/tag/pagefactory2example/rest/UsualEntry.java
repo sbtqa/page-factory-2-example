@@ -12,6 +12,6 @@ public class UsualEntry extends EndpointEntry {
 
     @Validation(title = "description")
     public void validate() {
-        getResponse().body("description", equalTo("New version of the page-factory framework"));
+        getResponse().body("description", equalTo("Page factory framework for java test automation. Web/API/Mobile"));
     }
 }

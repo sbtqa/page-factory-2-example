@@ -15,7 +15,7 @@ import ru.sbtqa.tag.pagefactory.web.junit.WebSteps;
 public class Pf2ExamplePage extends WebPage {
 
     @ElementTitle("Select branch")
-    @FindBy(xpath = "//details[contains(@class, 'branch-select-menu')]/summary")
+    @FindBy(xpath = "//details[contains(@id, 'branch-select-menu')]/summary")
     public WebElement selectMenuButton;
 
     @ElementTitle("for-example")

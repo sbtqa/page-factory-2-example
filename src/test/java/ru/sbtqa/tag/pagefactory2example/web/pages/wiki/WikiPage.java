@@ -8,6 +8,7 @@ import ru.sbtqa.tag.pagefactory.annotations.ActionTitle;
 import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
 import ru.sbtqa.tag.pagefactory.environment.Environment;
+import ru.sbtqa.tag.pagefactory.utils.Wait;
 
 import static java.lang.String.format;
 
@@ -24,6 +25,7 @@ public class WikiPage extends WebPage {
     @ActionTitle("click on section link")
     public void openSection(String name) {
         String xpath = format(XPATH_TEMPLATE, name);
+        Wait.presence(xpath, "Could not get Fragments link on wiki menu");
         WebElement section = Environment.getDriverService().getDriver().findElement(By.xpath(xpath));
         Environment.getPageActions().click(section);
     }

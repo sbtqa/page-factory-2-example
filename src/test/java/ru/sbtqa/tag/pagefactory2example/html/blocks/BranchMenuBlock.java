@@ -5,7 +5,7 @@ import ru.sbtqa.tag.pagefactory.annotations.ActionTitle;
 import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 
-@FindBy(xpath = "//details[contains(@class, 'branch-select-menu')]")
+@FindBy(xpath = "//details[@id='branch-select-menu']")
 public class BranchMenuBlock extends HtmlElement {
 
     @FindBy(xpath = "./summary")

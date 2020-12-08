@@ -12,7 +12,7 @@ Feature: Testing api-services with rest-plugin
     * user sends request for "get description of repo with params" with parameters
       | repo | page-factory-2 |
     * system returns "description" with parameters
-      | description | New version of the page-factory framework |
+      | description | Page factory framework for java test automation. Web/API/Mobile |
 
   @rest-fill-from-feature
   Scenario: Filling the request from the feature and sending, checking the answer

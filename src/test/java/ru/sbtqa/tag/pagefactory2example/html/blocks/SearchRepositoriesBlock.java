@@ -6,7 +6,7 @@ import ru.yandex.qatools.htmlelements.element.Button;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;
 import ru.yandex.qatools.htmlelements.element.TextInput;
 
-@FindBy(xpath = "//div[@class='TableObject']")
+@FindBy(xpath = "//form[@data-autosearch-results-container='org-repositories']")
 public class SearchRepositoriesBlock extends HtmlElement {
 
     @FindBy(xpath = ".//input[@id='your-repos-filter']")
