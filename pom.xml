@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                                               xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>ru.sbtqa.tag</groupId>
   <artifactId>page-factory-2-example</artifactId>
@@ -10,11 +10,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <surefire.version>2.22.1</surefire.version>
+    <surefire.version>3.0.0-M5</surefire.version>
     <pf2.version>16.5.0</pf2.version>
     <aspectj.version>1.9.2</aspectj.version>
     <aspectj.plugin.version>1.12.6</aspectj.plugin.version>
-    <allure.version>2.12.0</allure.version>
+    <allure.version>2.19.0</allure.version>
+    <allure-maven.version>2.11.2</allure-maven.version>
+    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
   </properties>
   <repositories>
     <repository>
@@ -57,7 +59,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
+        <version>${maven-compiler-plugin.version}</version>
         <executions>
           <execution>
             <id>default-testCompile</id>
@@ -77,9 +79,14 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${surefire.version}</version>
         <configuration>
+          <testSourceDirectory>${project.basedir}/src/test/resources/ru/features</testSourceDirectory>
+          <useSystemClassLoader>false</useSystemClassLoader>
+          <excludes>
+            <exclude>**/*unitTest.class</exclude>
+          </excludes>
           <argLine>
+            -Dfile.encoding=UTF-8
             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-            -Dcucumber.options="--plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm --plugin pretty"
           </argLine>
           <systemPropertyVariables>
             <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
@@ -90,12 +97,23 @@
               <value>io.qameta.allure.junit4.AllureJunit4</value>
             </property>
           </properties>
+          <systemProperties>
+            <cucumber.options>
+              --plugin io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm
+              --plugin pretty
+            </cucumber.options>
+          </systemProperties>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit4</artifactId>
+            <version>${surefire.version}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -129,7 +147,7 @@
       <plugin>
         <groupId>io.qameta.allure</groupId>
         <artifactId>allure-maven</artifactId>
-        <version>2.10.0</version>
+        <version>${allure-maven.version}</version>
         <configuration>
           <resultsDirectory>allure-results</resultsDirectory>
         </configuration>
