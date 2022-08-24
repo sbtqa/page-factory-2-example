@@ -8,6 +8,7 @@ Feature: Example of using fragments
     * user inserts fragment "Open doc section"
       | section   |
       | Fragments |
+    * user is waiting for the element "Header" to contain text "Fragments"
     * user checks in the element "Header" value "Fragments"
 
   @fragment-outline
@@ -16,6 +17,7 @@ Feature: Example of using fragments
     * user inserts fragment "Open doc section"
       | section   |
       | <section> |
+    * user is waiting for the element "Header" to contain text "<section>"
     * user checks in the element "Header" value "<section>"
 
     Examples:

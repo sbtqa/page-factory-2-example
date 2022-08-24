@@ -15,7 +15,7 @@ import static java.lang.String.format;
 @PageEntry(title = "Wiki")
 public class WikiPage extends WebPage {
 
-    private static final String XPATH_TEMPLATE = "//li[@class='Box-row']//a[text()='%s']";
+    private static final String XPATH_TEMPLATE = "//li[@class='Box-row px-2 py-2']//a[text()='%s']";
 
     @ElementTitle("Header")
     @FindBy(xpath = "//h1[contains(@class, 'gh-header-title')]")

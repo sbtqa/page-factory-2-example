@@ -12,7 +12,7 @@
     * пользователь отправляет запрос "get description of repo with params" с параметрами
       | repo | page-factory-2 |
     * система возвращает "description" с параметрами
-      | description | New version of the page-factory framework |
+      | description | Page factory framework for java test automation. Web/API/Mobile |
 
   @rest-fill-from-feature
   Сценарий: Заполнение запроса из фичи и отправка, проверка ответа
