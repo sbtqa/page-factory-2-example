@@ -29,7 +29,7 @@ public class MainPage extends WebPage {
     public WebElement pageFactory2ExampleLink;
 
     @ElementTitle("docs")
-    @FindBy(xpath = "//a[@href='/sbtqa/page-factory-2-site']")
+    @FindBy(xpath = "//a[@href='/sbtqa/sbtqa.github.io']")
     public WebElement docsLink;
 
     public MainPage() {

@@ -16,14 +16,13 @@ public class FillFromFeatureEntry extends EndpointEntry {
 
     @Validation(title = "validate")
     public void validate() {
-        getResponse().body("total_count", greaterThan(4));
+        getResponse().body("total_count", greaterThan(3));
         List<String> repos = getResponse().extract().body().jsonPath().get("items.name");
         Assert.assertTrue(
                 repos.containsAll(Arrays.asList(
                         "page-factory-2",
                         "page-factory",
                         "page-factory-2-example",
-                        "page-factory-2-site",
                         "page-factory-example"
                 )));
 
