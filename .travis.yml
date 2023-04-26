@@ -2,12 +2,12 @@ language: java
 dist: focal
 branches:
   only:
-  - master
+  - travis
 
 addons:
   chrome: stable
 jdk:
-- openjdk8
+#- openjdk8
 - openjdk11
 before_install:
 - google-chrome --version
