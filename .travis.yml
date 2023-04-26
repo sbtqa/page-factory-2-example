@@ -1,0 +1,16 @@
+language: java
+dist: focal
+branches:
+  only:
+  - master
+
+addons:
+  chrome: stable
+jdk:
+- openjdk8
+- openjdk11
+before_install:
+- google-chrome --version
+install: true
+script:
+  - mvn clean test
