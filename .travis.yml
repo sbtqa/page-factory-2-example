@@ -2,7 +2,7 @@ language: java
 dist: focal
 branches:
   only:
-  - travis
+  - master
 
 addons:
   chrome: stable
