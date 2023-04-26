@@ -7,10 +7,9 @@ branches:
 addons:
   chrome: stable
 jdk:
-#- openjdk8
-- openjdk11
+  - openjdk11
 before_install:
-- google-chrome --version
-#install: true
+  - google-chrome --version
+  - sed -i 's/.*webdriver\.chrome\.capability\.options\.args.*/webdriver\.chrome\.capability\.options\.args = headless,disable-gpu,no-sandbox,--remote-allow-origins=\*/' src/test/resources/config/application.properties
 script:
   - mvn clean test
