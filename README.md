@@ -1,1 +1,1 @@
-Это тестовый проект с примером использования фреймворка [page-factory-2](https://github.com/sbtqa/page-factory-2)
+An example project for the [page-factory-2](https://github.com/sbtqa/page-factory-2) framework.
