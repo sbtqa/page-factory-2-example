@@ -12,7 +12,7 @@ import ru.sbtqa.tag.pagefactory.web.junit.WebSteps;
 public class FilePage extends WebPage {
 
     @ElementTitle("Text")
-    @FindBy(id = "LC1")
+    @FindBy(id = "read-only-cursor-text-area")
     public WebElement textArea;
 
     public FilePage validateText(String text) throws PageException {

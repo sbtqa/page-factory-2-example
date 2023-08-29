@@ -10,6 +10,6 @@ import ru.yandex.qatools.htmlelements.element.TextBlock;
 public class FilePage extends HTMLPage {
 
     @ElementTitle("Text")
-    @FindBy(id = "LC1")
+    @FindBy(id = "read-only-cursor-text-area")
     public TextBlock textArea;
 }
