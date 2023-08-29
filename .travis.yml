@@ -1,0 +1,15 @@
+language: java
+dist: focal
+branches:
+  only:
+  - master
+
+addons:
+  chrome: stable
+jdk:
+  - openjdk11
+before_install:
+  - google-chrome --version
+  - sed -i 's/.*webdriver\.chrome\.capability\.options\.args.*/webdriver\.chrome\.capability\.options\.args = headless,disable-gpu,no-sandbox,--remote-allow-origins=\*/' src/test/resources/config/application.properties
+script:
+  - mvn clean test
